@@ -1,0 +1,23 @@
+{% load static %}
+<html>
+    <head>
+        <title>Hotspot Model</title>
+        <link rel="stylesheet" href="{% static 'hotspot_insert_generator/hotspot_insert_generator.css'" %}">
+    </head>
+    <body>
+        <div>
+            <form method="post" enctype="multipart/form-data">
+                {{ form.errors }}
+                {% csrf_token %}
+                <div>
+                    {{ form.modelname.label_tag }}{{ form.modelname }}
+                </div>
+                <div>{{ form.instructions.label_tag }}{{ form.instructions }}</div>
+                <div>{{ form.instrucions_photo.label_tag }}{{ form.instructions_photo }}</div>
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

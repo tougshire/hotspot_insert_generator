@@ -1,0 +1,105 @@
+{% load static %}
+<html>
+    <head>
+        <title>Hotspot Insert</title>
+        <link rel="stylesheet" href="{% static 'hotspot_insert_generator/hotspot_insert_generator.css'" %}">
+    </head>
+    <body>
+        {% if codabar_image %}
+            <div id="div_insert_container">
+                <div id="div_library_id_connection_info">
+                    <div id="div_library_id">
+                        <div id="div_library_name">Suffolk Public Library</div>
+                        <div id="div_location">Suffolk, Va</div>
+                    </div>
+                    <div id="div_ssid_password">
+                        <div id="div_ssid">{{ ssid }}</div>
+                        <div id="div_password">{{ password }}</div>
+                    </div>
+                </div>
+                <div id="div_codabar">
+                    <div>
+                        <div id="div_codabar_image">
+                            <img id="img" src="data:image/jpeg;base64, {{ codabar_image }}">
+                        </div>
+                        <div id="div_codabar_number">
+                            {{ barcode_number }}
+                        </div>
+                    </div>
+                </div>
+                <div id="div_main_instructions">
+                    <div id="div_instructions_section1">
+                        <div id="div_wifi2go_logo">
+                            <img src="{% static 'hotspot_insert_generator/wifi2go_logo.png' %}">
+                        </div>
+                        <div id="div_agreement">
+                            By checking out a Mobile Hotspot, you agree to the terms and conditions which can be found online and at any Suffolk Public Library location.  The City of Suffolk (Suffolk Public Library) is not responsible for personal information shared over the Internet or for information and websites accessed using the device, or for any misuse, harm, or any other result due to the use of the Mobile Hotspot.
+                        </div>
+                    </div>
+                    <div id="div_instructions_section2">
+                        <div id="div_rules">
+                            <div>Contents: Hotspot, Charging Block, Cable, Instructions</div>
+                            <ul>
+                                <li>
+                                    This device checks out for 21 days.
+                                </li>
+                                <li>
+                                    Return the device and all accessories in good condition.
+                                </li>
+                                <li>
+                                    Damage or loss of items may result in a replacement fee.
+                                </li>
+                                <li>
+                                    Borrow only 1 device at a time per household.
+                                  </li>
+                            </ul>
+                        </div>
+                        <div id="div_coverage">
+                            Coverage depends on the Verizon network and may be affected by the device location or network conditions.
+                        </div>
+                        <div id="div_support">
+                            Support: Call the Suffolk Public Library at 
+                            757-514-7323
+                        </div>
+                    </div>
+                </div>
+                <div id="div_device_instructions">
+                    <div id="div_device_instructions_text">
+                        {{ device_model.instructions|safe }}
+                    </div>
+                    <div id="div_device_instructions_photo">
+                        <img src="{{ device_model.instructions_photo.url }}">
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="div_labels">
+                <div id="div_connection_label">
+                    <div id="div_connection_label_ssid">
+                        {{ ssid }}
+                    </div>
+                    <div id="div_connecton_label_password">
+                        {{ password }}
+                    </div>
+                </div>
+                <div id="div_barcode_label">
+                    <div id="div_barcode_label_library_id">
+                        <div>Suffolk Public Library</div>
+                        <div>Suffolk, VA</div>
+                    </div>
+                    <div id="div_barcode_label_img">
+                        <img id="img" src="data:image/jpeg;base64, {{ codabar_image }}">
+                    </div>
+                    <div id="div_barcode_label_number">
+                        {{ barcode_number }}
+                    </div>
+                </div>
+
+            </div>
+        {% endif %}
+
+        {% include "./insert_form.html" %}
+
+    </body>
+</html>
