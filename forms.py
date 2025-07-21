@@ -15,8 +15,8 @@ class InsertForm(forms.Form):
     start_code = forms.ChoiceField(label="start_code", choices=CODE_CHOICES, initial="A")
     stop_code = forms.ChoiceField(label="stop_code", choices=CODE_CHOICES, initial="B")
     barcode_number = forms.CharField(label="barcode")
-    ssid = forms.CharField(label="SSID", blank=True)
-    password = forms.CharField(label="password", blank=True)
+    ssid = forms.CharField(label="SSID", required=False )
+    password = forms.CharField(label="password", required=False )
     device_model = forms.ModelChoiceField(label="device", queryset=DeviceModel.objects.all(), widget=TouglatesRelatedSelect(
                 related_data={
                     "model_name": "DeviceModel",
