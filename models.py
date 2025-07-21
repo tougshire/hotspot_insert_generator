@@ -9,7 +9,7 @@ class DeviceModel(models.Model):
             <li>Connect your device to this device using the SSID and password printed in this documentation</li>
         </ul>
         """)
-    instructions_photo = models.ImageField("photo for instructions", upload_to="hotspot_insert_generator")
+    instructions_photo = models.ImageField("photo for instructions", upload_to="hotspot_insert_generator", blank=True, null=True)
 
     def __str__(self):
         return self.modelname
