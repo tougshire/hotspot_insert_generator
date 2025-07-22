@@ -45,6 +45,7 @@ body {print-color-adjust: exact;}
     border-bottom:1px solid black;
 }
 #div_device_instructions  {
+    transform:rotate(180deg);
     padding-top:.25in;
     justify-content: left;
 }
