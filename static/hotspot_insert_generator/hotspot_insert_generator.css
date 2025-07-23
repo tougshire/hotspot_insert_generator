@@ -22,7 +22,6 @@ body {print-color-adjust: exact;}
 }
 #div_codabar {
     justify-content: center;
-    padding-bottom:.5in;
 }
 #div_codabar_image > img {
     height: 0.5in;
@@ -46,7 +45,6 @@ body {print-color-adjust: exact;}
 }
 #div_device_instructions  {
     transform:rotate(180deg);
-    padding-top:.5in;
     justify-content: left;
 }
 #div_device_instructions_text  {
@@ -112,6 +110,9 @@ body {print-color-adjust: exact;}
     font-size: 8pt;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight:bolder;
+}
+div.separator {
+    min-height: 1in;
 }
 
 #div_form {
