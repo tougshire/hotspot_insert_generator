@@ -12,6 +12,9 @@ body {print-color-adjust: exact;}
 #div_insert_container > div {
     display:flex;
 }
+#div_library_id_connection_info {
+    font-size:1.2em;
+}
 #div_library_id {
     width:50%;
     border:1px solid black;
