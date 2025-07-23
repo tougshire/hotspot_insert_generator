@@ -22,7 +22,7 @@ body {print-color-adjust: exact;}
 }
 #div_codabar {
     justify-content: center;
-    padding-bottom:.25in;
+    padding-bottom:.5in;
 }
 #div_codabar_image > img {
     height: 0.5in;
@@ -46,7 +46,7 @@ body {print-color-adjust: exact;}
 }
 #div_device_instructions  {
     transform:rotate(180deg);
-    padding-top:.25in;
+    padding-top:.5in;
     justify-content: left;
 }
 #div_device_instructions_text  {
