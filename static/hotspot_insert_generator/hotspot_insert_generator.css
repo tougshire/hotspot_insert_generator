@@ -115,7 +115,7 @@ body {print-color-adjust: exact;}
     font-weight:bolder;
 }
 div.separator {
-    min-height: 1in;
+    min-height: .5in;
 }
 
 #div_form {
