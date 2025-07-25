@@ -13,7 +13,7 @@ body {print-color-adjust: exact;}
     display:flex;
 }
 #div_library_id_connection_info {
-    font-size:1.2em;
+    font-size:1.1em;
 }
 #div_library_id {
     width:50%;
@@ -115,7 +115,7 @@ body {print-color-adjust: exact;}
     font-weight:bolder;
 }
 div.separator {
-    min-height: .5in;
+    min-height: .25in;
 }
 
 #div_form {
