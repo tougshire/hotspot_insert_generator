@@ -23,6 +23,10 @@ body {print-color-adjust: exact;}
     width:50%;
     border:1px solid black;
 }
+#please_return_label {
+    width:50%;
+    border:1px solid black;
+}
 #div_codabar {
     justify-content: center;
 }
@@ -98,6 +102,10 @@ body {print-color-adjust: exact;}
 #div_connecton_label_password {
     font-weight: bold;
     font-size:16pt;
+}
+
+#div_return_label_text {
+    font-weight:bold;
 }
 
 #div_barcode_label_library_id {
