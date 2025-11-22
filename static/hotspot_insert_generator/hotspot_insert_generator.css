@@ -84,11 +84,24 @@ body {print-color-adjust: exact;}
 
 
 #div_labels {
-    margin-top:1in;
+    margin-top:.5in;
     display:flex;
 }
 
 #div_labels > div {
+    width:2in;
+    border:5px solid black;
+    text-align:center;
+
+}
+
+#div_library_label {
+    margin-top:.5in;
+    display:flex;
+}
+
+
+#div_library_label > div {
     width:2in;
     border:5px solid black;
     text-align:center;
