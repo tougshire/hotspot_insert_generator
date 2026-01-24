@@ -1,5 +1,4 @@
 from django.contrib import admin
-from .models import DeviceModel
+from .models import InsertTemplate
 
-admin.site.register(DeviceModel )
-# Register your models here.
+admin.site.register(InsertTemplate )

@@ -5,8 +5,8 @@ from PIL import Image, ImageDraw
 from io import BytesIO
 import base64
 
-from .forms import DeviceModelForm, InsertForm
-from .models import DeviceModel
+from .forms import InsertTemplateForm, InsertForm
+from .models import InsertTemplate
 
 from django.views.generic import FormView,CreateView,DetailView
 
@@ -112,15 +112,15 @@ class InsertCreate(FormView):
         context_data["barcode_number"] = clean_data["barcode_number"]
         context_data["ssid"] = clean_data["ssid"]
         context_data["password"] = clean_data["password"]
-        context_data["device_model"] = clean_data["device_model"]
+        context_data["insert_template"] = clean_data["insert_template"]
 
         return render( self.request, self.template_name, context_data )
 
-class DeviceModelCreate(PermissionRequiredMixin, CreateView):
-    permission_required = 'hotspot_insert_generator.add_devicemodel'
-    model = DeviceModel
-    form_class = DeviceModelForm
-    template_name = "hotspot_insert_generator/devicemodel_form.html"
+class InsertTemplateCreate(PermissionRequiredMixin, CreateView):
+    permission_required = 'hotspot_insert_generator.add_inserttemplate'
+    model = InsertTemplate
+    form_class = InsertTemplateForm
+    template_name = "hotspot_insert_generator/inserttemplate_form.html"
 
     def get_success_url(self):
 
@@ -135,15 +135,15 @@ class DeviceModelCreate(PermissionRequiredMixin, CreateView):
             )
         return reverse_lazy("hotspot_insert_generator:device_detail", kwargs={"pk": self.object.pk})
 
-class DeviceModelUpdate(PermissionRequiredMixin, CreateView):
-    permission_required = 'hotspot_insert_generator.add_devicemodel'
-    model = DeviceModel
-    form_class = DeviceModelForm
-    template_name = "hotspot_insert_generator/devicemodel_form.html"
+class InsertTemplateUpdate(PermissionRequiredMixin, CreateView):
+    permission_required = 'hotspot_insert_generator.add_inserttemplate'
+    model = InsertTemplate
+    form_class = InsertTemplateForm
+    template_name = "hotspot_insert_generator/inserttemplate_form.html"
 
     def get_success_url(self):
         return reverse_lazy("hotspot_insert_generator:device_detail", kwargs={"pk": self.object.pk})
 
-class DeviceModelDetail(DetailView):
-    model = DeviceModel
-    template_name = "hotspot_insert_generator/devicemodel_detail.html"
+class InsertTemplateDetail(DetailView):
+    model = InsertTemplate
+    template_name = "hotspot_insert_generator/inserttemplate_detail.html"

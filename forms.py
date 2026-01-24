@@ -2,7 +2,7 @@ from django import forms
 from django.urls import reverse_lazy
 
 from touglates.widgets import TouglatesRelatedSelect
-from .models import DeviceModel
+from .models import InsertTemplate
 
 class InsertForm(forms.Form):
     CODE_CHOICES=[
@@ -17,20 +17,19 @@ class InsertForm(forms.Form):
     barcode_number = forms.CharField(label="barcode")
     ssid = forms.CharField(label="SSID", required=False )
     password = forms.CharField(label="password", required=False )
-    device_model = forms.ModelChoiceField(label="device", queryset=DeviceModel.objects.all(), widget=TouglatesRelatedSelect(
+    insert_template = forms.ModelChoiceField(label="device", queryset=InsertTemplate.objects.all(), widget=TouglatesRelatedSelect(
                 related_data={
-                    "model_name": "DeviceModel",
+                    "model_name": "InsertTemplate",
                     "app_name": "hotspot_insert_generator",
-                    "add_url": reverse_lazy("hotspot_insert_generator:devicemodel-popup"),
+                    "add_url": reverse_lazy("hotspot_insert_generator:insert_template-popup"),
                 },
             ),
     )
 
-class DeviceModelForm(forms.ModelForm):
+class InsertTemplateForm(forms.ModelForm):
     class Meta:
-        model=DeviceModel
+        model=InsertTemplate
         fields = [
-            'modelname',
-            'instructions',
-            'instructions_photo',
+            'template_title',
+            'template_filename'
         ]

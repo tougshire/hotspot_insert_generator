@@ -51,10 +51,10 @@ body {print-color-adjust: exact;}
     border-bottom:1px solid black;
 }
 #div_device_instructions  {
-    transform:rotate(180deg);
     justify-content: left;
 }
 #div_device_instructions_text  {
+    transform:rotate(180deg);
     text-align: left;
     width:60%;
 }
