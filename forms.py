@@ -31,5 +31,6 @@ class InsertTemplateForm(forms.ModelForm):
         model=InsertTemplate
         fields = [
             'template_title',
-            'template_filename'
+            'template_filename',
+            'stylesheet_filename'
         ]

@@ -2,7 +2,13 @@
 <html>
     <head>
         <title>Hotspot Insert</title>
-        <link rel="stylesheet" href="{% static 'hotspot_insert_generator/hotspot_insert_generator.css'" %}">
+
+        <link rel="stylesheet" href="{% static "hotspot_insert_generator/stylesheet_base.css" %}">
+        {% if insert_template.stylesheet_filename %}
+          <link rel="stylesheet" href="{% static "hotspot_insert_generator/"|add:insert_template.stylesheet_filename %}">
+        {% endif %}
+
+
     </head>
     <body>
     {% if insert_template.template_filename %}
